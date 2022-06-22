@@ -1,0 +1,24 @@
+# title = 
+# "params for generating doc embeddings. \
+# The following things should be provided:
+# - tokenized passage corpus
+# - a pretrained passage encoder"
+
+
+# [Model]
+model_type = "ANCE"
+pretrained_passage_encoder = "../COTED/checkpoints/ad-hoc-ance-msmarco"   # passage encoder!!!
+max_seq_length = 512
+
+# [Gen]
+per_gpu_eval_batch_size = 128
+local_rank = -1 # Not use distributed training
+disable_tqdm = false
+n_gpu = 1
+
+# [Input Data]
+tokenized_passage_collection_dir_path = "./Output/gen_tokenized_doc/ance_tokenized_collection"
+
+
+# [Output]
+data_output_path = "./Output/gen_doc_embedding/ance_embeddings"

@@ -1,0 +1,43 @@
+title = "generating conversational search sessions from web search sessions with query relation graph"
+
+# For Meta Session Graph Generation
+# input files
+# wss_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/raw/marco_ann_session.dev.all.tsv"
+wss_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/raw/sample.tsv"
+wss_files = ["/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/raw/marco_ann_session.train.all.tsv", "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/raw/marco_ann_session.dev.all.tsv"]
+query_files = ["/data/slc/mmr/CIS/Dataset/msmarco_cs/passage_ranking/queries.train.tsv", "/data/slc/mmr/CIS/Dataset/msmarco_cs/passage_ranking/queries.dev.tsv"]
+qrel_files = ["/data/slc/mmr/CIS/Dataset/msmarco_cs/passage_ranking/qrels.train.tsv", "/data/slc/mmr/CIS/Dataset/msmarco_cs/passage_ranking/qrels.dev.tsv"]
+passage_file = "/data/slc/mmr/CIS/Passage_Collection/cast_shared/msmarco.tsv"
+
+max_in_topic_num = 5
+max_response_induced_num = 5
+
+# output 
+# wss_meta_graph_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/preprocessed/wss_meta_graph.dev.json"
+wss_meta_graph_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/preprocessed/sample_graph.json"
+
+
+
+
+# For Kw to Nl
+kw_to_nl_t5_checkpoint_path = "./output/train_kw_to_nl_t5/checkpoints/model-3-epoch-3"
+max_kw_to_nl_seq_length = 20
+inference_kw_to_nl_batch_size = 1024
+
+kw_to_nl_output_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/preprocessed/kw_to_nl_output.json"
+
+
+
+# For Nl to Kw
+nl_to_cnl_t5_checkpoint_path = ""
+inference_nl_to_cnl_batch_size = 256
+
+nl_to_cnl_inference_t5_input_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/preprocessed/nl_to_cnl_inference_t5_input.json"
+nl_to_cnl_inference_t5_output_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/preprocessed/nl_to_cnl_inference_t5_output.json"
+
+cnl_meta_graph_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/preprocessed/cnl_meta_graph.json"
+secosearch_train_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/preprocessed/secosearch_train.json"
+
+
+# transform generated pseudo css to train data
+final_generated_train_file = "/data/slc/mmr/CIS/Dataset/css/preprocessed/train_data.json"

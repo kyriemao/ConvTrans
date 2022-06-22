@@ -1,0 +1,15 @@
+title = "gen nl to cnl training data for t5"
+
+# [Input]
+cast19_turn_depen_file = "/data/slc/mmr/CIS/Dataset/cast19/raw/cast19_annotation_data.txt"
+cast19_test_file = "/data/slc/mmr/CIS/Dataset/cast19/preprocessed/test.json"
+
+cast20_raw_annotated_file = "/data/slc/mmr/CIS/Dataset/cast20/raw/automatic_evaluation_topics_annotated_v1.1.json"
+cast20_turn_depen_file = "/data/slc/mmr/CIS/Dataset/cast20/raw/cast20_annotation_data.txt"
+cast20_test_file = "/data/slc/mmr/CIS/Dataset/cast20/preprocessed/test.json"
+
+
+# Output
+cast19_output_file = "/data/slc/mmr/CIS/Dataset/cast19/preprocessed/cast19_nl_to_cnl_t5_train.json"
+cast20_output_file = "/data/slc/mmr/CIS/Dataset/cast20/preprocessed/cast20_nl_to_cnl_t5_train.json"
+

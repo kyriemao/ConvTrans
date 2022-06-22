@@ -1,0 +1,43 @@
+
+title = "train a t5 model to transform nl-query to conversational nl-query (cnl-query)."
+
+# training params
+num_train_epochs = 8  
+per_gpu_train_batch_size = 10
+n_gpu = 1
+
+save_steps = 1.0   # int (steps) or float (ratio of a epoch)
+print_steps =  0.002  # print the loss
+
+
+# input path    
+# train_file_path = "../Dataset/qrecc/preprocessed/train.json" # use qrecc train.json as the training data
+# train_file_path = "../Dataset/cast19/preprocessed/test.json" # use qrecc train.json as the training data
+train_file_path = "../Dataset/msmarco_cs/cs/preprocessed/nl_to_cnl_t5_train_data.json" # use qrecc train.json as the training data
+
+
+
+# output path
+overwrite_output_dir = true
+log_dir_path = "./output/train_nl_to_cnl_t5/logs_use_cast19and20"
+model_output_path = "./output/train_nl_to_cnl_t5/checkpoints_use_cast19and20"
+
+
+
+
+
+
+# default params
+model_path = "t5-base"
+
+max_nl_to_cnl_input_seq_length = 150
+max_nl_to_cnl_output_seq_length = 20
+learning_rate = 5e-5
+weight_decay = 0.0
+adam_epsilon = 1e-8
+num_warmup_steps = 0
+max_grad_norm = 1.0
+disable_tqdm = false
+
+seed = 42
+use_data_percent = 1.0

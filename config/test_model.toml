@@ -1,0 +1,42 @@
+title = "the test script to test a model on CAsT/QReCC/TopiOCQA benchmarks"
+
+
+query_encoder_checkpoint = "../COTED/checkpoints/ad-hoc-ance-msmarco"
+# query_encoder_checkpoint = "./output/train_model_css/checkpoint/model-0-epoch-0-step-34032"
+passage_block_num = 10  # CAsT
+per_gpu_eval_batch_size = 4
+n_gpu = 2
+test_type = "baseline_raw"  #!!
+enable_last_repsone = true # !!
+special_assemble_conv_query = false 
+response_type = "passage"
+rel_threshold = 2 # 2 for cast-20, 1 for others
+
+# [Output]
+# qrel_output_path = "./output/test_model/cast20/model-0-epoch-0-step-34032"   # will output two files: res.json and res.trec
+qrel_output_path = "./output/test_model/cast20/ance"
+
+
+
+# [default]
+model_type = "ANCE"
+max_concat_length = 512
+max_query_length = 64
+max_doc_length = 384
+seed = 42
+
+use_gpu = false
+top_n = 100
+use_data_percent = 1.0
+cross_validate = false
+disable_tqdm = false
+
+test_file_path = "../Dataset/cast20/preprocessed/test.json"
+gold_qrel_file_path = "../Dataset/cast20/preprocessed/qrels.tsv"
+need_output_passage_content = false
+
+passage_collection_path= "../Passage_Collection/cast_shared/collection.tsv"
+passage_embeddings_dir_path = "../Passage_Collection/cast_shared/ance_embeddings"
+passage_offset2pid_path = "../Passage_Collection/cast_shared/ance_embeddings/offset2pid.pickle"
+
+

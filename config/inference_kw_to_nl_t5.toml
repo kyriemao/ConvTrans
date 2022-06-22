@@ -1,0 +1,21 @@
+title = "inference t5 to get the nl-query from the kw-query"
+
+# inference params
+checkpoint_path = "./output/train_kw_to_nl_t5/checkpoints/model-3-epoch-3"
+n_gpu = 1
+per_gpu_eval_batch_size = 1496
+enable_task_prefix = false
+
+# input path
+test_file_path = "../Dataset/msmarco_cs/cs/preprocessed/inference_kw_to_nl_t5_input.json"
+
+# output path
+output_file_path = "../Dataset/msmarco_cs/cs/preprocessed/inference_kw_to_nl_t5_output.json"
+
+
+
+# default params
+max_seq_length = 20
+disable_tqdm = false
+seed = 42
+use_data_percent = 1.0

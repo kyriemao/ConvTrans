@@ -1,0 +1,17 @@
+title = "tokenizing the collection (all passaages) for later embedding generation"
+
+
+# [Model]
+model_type = "ANCE"
+pretrained_passage_encoder = "../COTED/checkpoints/ad-hoc-ance-msmarco"   # passage encoder!!!
+max_seq_length = 512    # The maximum total input sequence length after tokenization. Sequences longer than this will be truncated, sequences shorter will be padded."
+max_doc_character = 10000   # used before tokenizer to save tokenizer latency
+
+
+# [Input Data]
+raw_collection_path = "../Passage_Collection/cast_shared/collection.tsv"
+
+
+# [Output]
+
+data_output_path = "./Output/gen_tokenized_doc/ance_tokenized_collection"

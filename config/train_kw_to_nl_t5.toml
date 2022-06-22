@@ -1,0 +1,39 @@
+
+title = "train a t5 model to transform kw-query to nl-query."
+
+# training params
+num_train_epochs = 4   
+per_gpu_train_batch_size = 30
+n_gpu = 1
+
+save_steps = 1.0   # int (steps) or float (ratio of a epoch)
+print_steps =  0.001  # print the loss
+enable_task_prefix = false
+
+
+# input path
+train_file_path = "../Dataset/quora/preprocessed/train_t5.sample.json"
+
+# output path
+overwrite_output_dir = true
+log_dir_path = "./output/train_kw_to_nl_t5/logs"
+model_output_path = "./output/train_kw_to_nl_t5/checkpoints"
+
+
+
+
+
+
+# default params
+model_path = "t5-base"
+
+max_seq_length = 20
+learning_rate = 5e-5
+weight_decay = 0.0
+adam_epsilon = 1e-8
+num_warmup_steps = 0
+max_grad_norm = 1.0
+disable_tqdm = false
+
+seed = 42
+use_data_percent = 1.0
