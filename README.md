@@ -57,6 +57,8 @@ train_model.py --config=./config/train_model.toml
 python test_model.py --config=config/test_model.toml
 ```
 
-- Other files:
+
+[Other Files]:
   - processing passage collections, generating passage (doc) embeddings in advance for testing: gen_tokenized_doc.py, gen_cast_collection.py, gen_doc_embedding.py
   - training and inference files of the conversational query rewriter of ConvTrans: train_kw_to_nl_t5.py, train_nl_to_cnl_t5.py, inference_kw_to_nl_t5.py, inference_nl_to_cnl_t5.py
+  - useful functions: models.py, utils.py, data_structure.py
