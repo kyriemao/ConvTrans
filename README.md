@@ -52,7 +52,7 @@ train_model.py --config=./config/train_model.toml
 
 ```
 
-- Evaluation the trained model on CAsT datasets
+- Evaluating the trained model on CAsT datasets
 ```
 python test_model.py --config=config/test_model.toml
 ```
