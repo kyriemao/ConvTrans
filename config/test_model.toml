@@ -1,19 +1,18 @@
-title = "the test script to test a model on CAsT/QReCC/TopiOCQA benchmarks"
+title = "the test script to test a model on CAsT datasets"
 
 
-query_encoder_checkpoint = "../COTED/checkpoints/ad-hoc-ance-msmarco"
-# query_encoder_checkpoint = "./output/train_model_css/checkpoint/model-0-epoch-0-step-34032"
+# You need to put the trained conversational session encoder into here
+query_encoder_checkpoint = ""
 passage_block_num = 10  # CAsT
 per_gpu_eval_batch_size = 4
 n_gpu = 2
-test_type = "baseline_raw"  #!!
+test_type = "conv"  #!!
 enable_last_repsone = true # !!
 special_assemble_conv_query = false 
 response_type = "passage"
-rel_threshold = 2 # 2 for cast-20, 1 for others
+rel_threshold = 2 # 2 for cast-20, 1 for cast-19
 
 # [Output]
-# qrel_output_path = "./output/test_model/cast20/model-0-epoch-0-step-34032"   # will output two files: res.json and res.trec
 qrel_output_path = "./output/test_model/cast20/ance"
 
 

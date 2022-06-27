@@ -2,42 +2,40 @@ title = "generating conversational search sessions from web search sessions with
 
 # For Meta Session Graph Generation
 # input files
-# wss_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/raw/marco_ann_session.dev.all.tsv"
-wss_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/raw/sample.tsv"
-wss_files = ["/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/raw/marco_ann_session.train.all.tsv", "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/raw/marco_ann_session.dev.all.tsv"]
-query_files = ["/data/slc/mmr/CIS/Dataset/msmarco_cs/passage_ranking/queries.train.tsv", "/data/slc/mmr/CIS/Dataset/msmarco_cs/passage_ranking/queries.dev.tsv"]
-qrel_files = ["/data/slc/mmr/CIS/Dataset/msmarco_cs/passage_ranking/qrels.train.tsv", "/data/slc/mmr/CIS/Dataset/msmarco_cs/passage_ranking/qrels.dev.tsv"]
-passage_file = "/data/slc/mmr/CIS/Passage_Collection/cast_shared/msmarco.tsv"
+wss_file = "marco_ann_session.dev.all.tsv"
+wss_files = ["marco_ann_session.train.all.tsv", "marco_ann_session.dev.all.tsv"]
+query_files = ["queries.dev.tsv"]
+qrel_files = ["qrels.dev.tsv"]
+passage_file = "msmarco.tsv"
 
 max_in_topic_num = 5
 max_response_induced_num = 5
 
 # output 
-# wss_meta_graph_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/preprocessed/wss_meta_graph.dev.json"
-wss_meta_graph_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/preprocessed/sample_graph.json"
-
+wss_meta_graph_file = "wss_meta_graph.dev.json"
 
 
 
 # For Kw to Nl
+# You need to put a trained NL-T5 to here
 kw_to_nl_t5_checkpoint_path = "./output/train_kw_to_nl_t5/checkpoints/model-3-epoch-3"
 max_kw_to_nl_seq_length = 20
 inference_kw_to_nl_batch_size = 1024
-
-kw_to_nl_output_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/preprocessed/kw_to_nl_output.json"
+kw_to_nl_output_file = "kw_to_nl_output.json"
 
 
 
 # For Nl to Kw
-nl_to_cnl_t5_checkpoint_path = ""
+# You need to put a trained CNL-T5 to here
+nl_to_cnl_t5_checkpoint_path = "./output/train_nl_to_cnl_t5/checkpoints/model-1-epoch-1"
 inference_nl_to_cnl_batch_size = 256
+nl_to_cnl_inference_t5_input_file = "nl_to_cnl_inference_t5_input.json"
+nl_to_cnl_inference_t5_output_file = "nl_to_cnl_inference_t5_output.json"
+cnl_meta_graph_file = "cnl_meta_graph.json"
 
-nl_to_cnl_inference_t5_input_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/preprocessed/nl_to_cnl_inference_t5_input.json"
-nl_to_cnl_inference_t5_output_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/preprocessed/nl_to_cnl_inference_t5_output.json"
-
-cnl_meta_graph_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/preprocessed/cnl_meta_graph.json"
-secosearch_train_file = "/data/slc/mmr/CIS/Dataset/msmarco_cs/cs/preprocessed/secosearch_train.json"
+# sampled training data
+secosearch_train_file = "secosearch_train.json"
 
 
 # transform generated pseudo css to train data
-final_generated_train_file = "/data/slc/mmr/CIS/Dataset/css/preprocessed/train_data.json"
+final_generated_train_file = "train_data.json"

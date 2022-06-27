@@ -9,22 +9,13 @@ n_gpu = 1
 save_steps = 1.0   # int (steps) or float (ratio of a epoch)
 print_steps =  0.002  # print the loss
 
-
 # input path    
-# train_file_path = "../Dataset/qrecc/preprocessed/train.json" # use qrecc train.json as the training data
-# train_file_path = "../Dataset/cast19/preprocessed/test.json" # use qrecc train.json as the training data
-train_file_path = "../Dataset/msmarco_cs/cs/preprocessed/nl_to_cnl_t5_train_data.json" # use qrecc train.json as the training data
-
-
+train_file_path = "../Dataset/msmarco_cs/cs/preprocessed/canard_nl_to_cnl_t5_train_data.json" 
 
 # output path
 overwrite_output_dir = true
-log_dir_path = "./output/train_nl_to_cnl_t5/logs_use_cast19and20"
-model_output_path = "./output/train_nl_to_cnl_t5/checkpoints_use_cast19and20"
-
-
-
-
+log_dir_path = "./output/train_nl_to_cnl_t5/log"
+model_output_path = "./output/train_nl_to_cnl_t5/checkpoints"
 
 
 # default params

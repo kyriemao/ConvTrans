@@ -2,8 +2,8 @@ title = "a basic config for train model."
 
 # [Model]
 model_type = "ANCE"
-pretrained_query_encoder = "../COTED/checkpoints/ad-hoc-ance-msmarco"
-pretrained_passage_encoder = "../COTED/checkpoints/ad-hoc-ance-msmarco"
+pretrained_query_encoder = "ad-hoc-ance-msmarco"
+pretrained_passage_encoder = "ad-hoc-ance-msmarco"
 
 max_concat_length = 512
 max_query_length = 64
@@ -12,14 +12,14 @@ max_doc_length = 384
 # [Train]
 train_type = "ranking" # kd or ranking
 num_train_epochs = 1   # !!
-per_gpu_train_batch_size = 3    # !!
-n_gpu = 2   # !!
+per_gpu_train_batch_size = 4    # !!
+n_gpu = 4   # !!
 disable_tqdm = false    # !!
 
 
 save_steps = 1.0   # !! int (steps) or float (ratio of a epoch)
 print_steps =  0.001  # print the loss
-learning_rate = 1e-5
+learning_rate = 5e-7
 weight_decay = 0.0
 adam_epsilon = 1e-8
 num_warmup_steps = 0
@@ -30,12 +30,11 @@ enable_last_repsone = true
 special_assemble_conv_query = false  # !!
 response_type = "passage"
 seed = 42
-
 use_data_percent = 1.0    # !!
 
 
 # [Input Data]
-train_file_path = "../Dataset/css/preprocessed/train_data.json"
+train_file_path = "train_data.json"
 
 # [Output]
 overwrite_output_dir = true

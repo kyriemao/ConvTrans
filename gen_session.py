@@ -741,24 +741,16 @@ def get_args():
 
 
 
-    #  this_turn["query"] = this_query
-    #     this_turn["qid"] = this_qid
-    #     this_turn["IT_qid_list"] = [x[0] for x in IT_qid_list]
-    #     this_turn["RI_qid_sent_list"] = [(x[0],x[1]) for x in RI_qid_sent_list]
-    #     this_turn["OI_qid"] = OI_qid
-
-
 
 if __name__ == '__main__':
     args = get_args()
     args.device = torch.device("cuda:0")
-    # get_all_qrels(args)
-    # query_formatting_and_extract_topic_words(args)    
+    get_all_qrels(args)
+    query_formatting_and_extract_topic_words(args)    
     process_session(args)
-    # process_session_kw_to_nl(args)
-    # gen_nl_to_cnl_t5_inference_input_data(args)
-    # process_session_nl_to_cnl(args)
-    # rw_on_meta_session_graph(args)
-    # trans_session_to_train_samples(args)
+    process_session_kw_to_nl(args)
+    gen_nl_to_cnl_t5_inference_input_data(args)
+    process_session_nl_to_cnl(args)
+    rw_on_meta_session_graph(args)
+    trans_session_to_train_samples(args)
 
-    # check_graph(args)

@@ -1,19 +1,15 @@
 title = "inference t5 to get the cnl-query from the nl-query and the context queries"
 
 # inference params
-# checkpoint_path = "./output/train_nl_to_cnl_t5/checkpoints/model-3-epoch-3"
-checkpoint_path = "./output/train_nl_to_cnl_t5/checkpoints_use_cast19and20/model-7-epoch-7"
+checkpoint_path = "./output/train_nl_to_cnl_t5/canard_checkpoints/model-3-epoch-3"
 n_gpu = 2
 per_gpu_eval_batch_size = 180
 
 # input path
-# test_file_path = "../Dataset/msmarco_cs/cs/preprocessed/inference_nl_to_cnl_t5_input_data.json"
 test_file_path = "../Dataset/msmarco_cs/cs/preprocessed/nl_to_cnl_inference_t5_input.json"
 
 # output path
-# output_file_path = "../Dataset/msmarco_cs/cs/preprocessed/inference_nl_to_cnl_t5_output.json"
 output_file_path = "../Dataset/msmarco_cs/cs/preprocessed/nl_to_cnl_inference_t5_output.json"
-# output_file_path = "../Dataset/msmarco_cs/cs/preprocessed/tmp.json"
 
 
 # default params

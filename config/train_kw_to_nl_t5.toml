@@ -21,9 +21,6 @@ model_output_path = "./output/train_kw_to_nl_t5/checkpoints"
 
 
 
-
-
-
 # default params
 model_path = "t5-base"
 
