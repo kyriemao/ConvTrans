@@ -4,8 +4,8 @@ title = "generating conversational search sessions from web search sessions with
 # input files
 wss_file = "marco_ann_session.dev.all.tsv"
 wss_files = ["marco_ann_session.train.all.tsv", "marco_ann_session.dev.all.tsv"]
-query_files = ["queries.dev.tsv"]
-qrel_files = ["qrels.dev.tsv"]
+query_files = ["queries.train.tsv", "queries.dev.tsv"]
+qrel_files = ["qrels.train.tsv", "qrels.dev.tsv"]
 passage_file = "msmarco.tsv"
 
 max_in_topic_num = 5
